@@ -45,8 +45,28 @@
             ></a>
           </span>
         </div>
+        <button id="hamburgerIcon" class="hamburger-menu social-media">
+          <i class="fa-solid fa-bars fa-2xl"></i>
+        </button>
+        <div class="post-container">
+          <div id="recentPostId" class="recent-post-container">
+            <h3 class="recent-post-headline">Recent Posts</h3>
+            <img
+              class="recent-post-img"
+              src="{% static 'Posts/images/avatar.png' %}"
+              alt=""
+            />
+            <div>
+              <h3 class="recent-post-description">
+                DSQL Part 2 – More Rust and a Momento Cache
+              </h3>
+              <h4 class="recent-post-description">December 14, 2024</h4>
+            </div>
+          </div>
+        </div>
       </section>
       <section class="content">{% block content %} {% endblock %}</section>
     </main>
+    <script src="{% static 'Posts/script.js' %}"></script>
   </body>
 </html>
