@@ -165,8 +165,13 @@ a:hover {
     display: none;
     flex-direction: row;
     align-items: center;
+    margin: 32px 10px;
   }
   .post-container {
     margin: 10px 10px;
+  }
+  .recent-post-headline {
+    position: absolute;
+    top: 352px;
   }
 }

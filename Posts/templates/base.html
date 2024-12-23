@@ -49,20 +49,23 @@
           <i class="fa-solid fa-bars fa-2xl"></i>
         </button>
         <div class="post-container">
+          <h3 class="recent-post-headline">Recent Posts</h3>
+          {% for post in posts %}
+          <!-- TODO: Add a link to redirect the user to the detail recent post he clicked-->
           <div id="recentPostId" class="recent-post-container">
-            <h3 class="recent-post-headline">Recent Posts</h3>
             <img
               class="recent-post-img"
-              src="{% static 'Posts/images/avatar.png' %}"
+              src="{{ post.image.url }}"
               alt=""
             />
             <div>
               <h3 class="recent-post-description">
-                DSQL Part 2 – More Rust and a Momento Cache
+                {{ post.title }}
               </h3>
-              <h4 class="recent-post-description">December 14, 2024</h4>
+              <h4 class="recent-post-description">{{ post.created_at }}</h4>
             </div>
           </div>
+          {% endfor %}
         </div>
       </section>
       <section class="content">{% block content %} {% endblock %}</section>

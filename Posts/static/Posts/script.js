@@ -8,6 +8,6 @@ hamburgerClick.addEventListener("click", function (event) {
     recentPostContainerState = !recentPostContainerState;
     recentPostContainer.style.display = recentPostContainerState
       ? "none"
-      : "block";
+      : "flex";
   }
 });
