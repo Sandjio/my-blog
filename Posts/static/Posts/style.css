@@ -54,6 +54,7 @@ a:hover {
   box-sizing: border-box;
 }
 :root {
+  --primary-font-family:Poppins, "Open Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
   /* --primary-color: #007bff;
     --secondary-color: #6c757d; */
   --text-color: #cccccc;
@@ -83,20 +84,38 @@ a:hover {
 .recent-post-description {
   color: var(--text-color);
 }
+.post-short-overview {
+  text-align: justify;
+  border: 1px solid black;
+}
+.post-content {
+  margin: 0px 68px;
+}
+.post-cover-image {
+  width: 100%;
+}
+.post-list-title {
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  font-size: 3.2rem;
+  line-height: 1.1;
+  letter-spacing: -0.05rem;
+}
 /* For large screens (desktop) */
 @media (min-width: 993px) {
   main {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     height: 100dvh;
+    margin-top: 200px;
   }
   .sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20%;
-    height: 100dvh;
+    min-width: 400px;
+    min-height: 100dvw;
     background-color: #27282b;
   }
 
@@ -143,7 +162,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
     height: fit-content;
     background-color: #27282b;
   }

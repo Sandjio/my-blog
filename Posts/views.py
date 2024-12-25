@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic import ListView, DetailView
 from .models import Post
 
 
@@ -10,14 +10,19 @@ class PostListView(ListView):
     ordering = ["-created_at"]
     paginate_by = 5
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        posts = context["posts"]
 
-# class PostDetailView(DetailView):
-#     model = Post
-#     template_name = "post_detail.html"
-#     context_object_name = "post"
-#     ordering = ["-created_at"]
-#     paginate_by = 5
+        for post in posts:
+            paragraphs = post.content.split("\n")
+            post.preview_content = "\n\n".join(paragraphs[:3])
+            post.has_more_content = len(paragraphs) > 3
+
+        return context
 
 
-class PostDetailView(TemplateView):
+class PostDetailView(DetailView):
+    model = Post
     template_name = "post_detail.html"
+    context_object_name = "post"

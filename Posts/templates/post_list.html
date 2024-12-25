@@ -1,1 +1,20 @@
 {% extends 'base.html' %}
+
+{% block content %}
+{% for post in posts %}
+<div style="border: 1px solid black;">
+    <img class="post-cover-image" src="{{ post.image.url }}" alt="">
+    <div class="post-content">
+        <h1 class="post-list-title">{{ post.title }}</h1>
+        <h3>Posted on {{ post.created_at }} by {{ post.author }}</p>
+        <div class="post-short-overview">{{ post.preview_content|linebreaks }}</>
+        {% if post.has_more_content %}
+            <p><a href="{% url 'post_detail' post.id %}">Continue Reading</a></p>
+        {% endif %}
+    </div>
+
+</div>
+{% empty %}
+    <p>No articles available.</p>
+{% endfor %}
+{% endblock %}
