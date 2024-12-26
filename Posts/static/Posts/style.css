@@ -78,8 +78,8 @@ a:hover {
   align-self: self-start;
 }
 .recent-post-img {
-  width: 100px;
   height: 100px;
+  padding-right:20px ;
 }
 .recent-post-description {
   color: var(--text-color);
@@ -189,8 +189,8 @@ a:hover {
   .post-container {
     margin: 10px 10px;
   }
-  .recent-post-headline {
+  /* .recent-post-headline {
     position: absolute;
     top: 352px;
-  }
+  } */
 }

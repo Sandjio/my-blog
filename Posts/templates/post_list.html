@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
-
 {% block content %}
 {% for post in posts %}
-<div style="border: 1px solid black;">
+<div>
     <img class="post-cover-image" src="{{ post.image.url }}" alt="">
     <div class="post-content">
         <h1 class="post-list-title">{{ post.title }}</h1>
