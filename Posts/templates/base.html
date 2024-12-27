@@ -34,38 +34,49 @@
             A blog about Programming and Cloud computing.
           </p>
           <span class="social-media-container">
-            <a class="social-media" href=""
+            <a class="social-media" href="https://github.com/Sandjio" target="_blank"
               ><i class="fa-brands fa-github fa-lg"></i
             ></a>
-            <a class="social-media" href=""
+            <a class="social-media" href="https://linkedin.com/in/emmanuel-sandjio" target="_blank"
               ><i class="fa-brands fa-linkedin-in fa-lg"></i
             ></a>
-            <a class="social-media" href=""
+            <a class="social-media" href="https://x.com/EmmanuelSandjio" target="_blank"
               ><i class="fa-brands fa-x-twitter fa-lg"></i
             ></a>
           </span>
         </div>
-        <button id="hamburgerIcon" class="hamburger-menu social-media">
+        <a id="hamburgerIcon" class="hamburger-menu social-media">
           <i class="fa-solid fa-bars fa-2xl"></i>
-        </button>
-        <div class="post-container">
+        </a>
+        <div id="postContainerId" class="post-container">
           <h3 class="recent-post-headline">Recent Posts</h3>
           {% for post in posts %}
-          <!-- TODO: Add a link to redirect the user to the detail recent post he clicked-->
-          <div id="recentPostId" class="recent-post-container">
-            <img
-              class="recent-post-img"
-              src="{{ post.image.url }}"
-              alt=""
-            />
+          <div  class="recent-post-container">
+            <a href="{% url 'post_detail' post.slug %}">
+              <img
+                class="recent-post-img"
+                src="{{ post.image.url }}"
+                alt=""
+              />
+            </a>
             <div>
-              <h3 class="recent-post-description">
-                {{ post.title }}
-              </h3>
+              <a href="{% url 'post_detail' post.slug %}">
+                <h3 class="recent-post-description">
+                  {{ post.title }}
+                </h3>
+              </a>
               <h4 class="recent-post-description">{{ post.created_at }}</h4>
             </div>
           </div>
           {% endfor %}
+          <div class="categories-container">
+            <h3 class="categories-headline">CATEGORIES</h3>
+            <ul class="categories-list">
+              {% for category in categories %}
+              <li class="category">{{ category.name }} {{ category.post_count }}</li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </section>
       <section class="post-list-container content">{% block content %} {% endblock %}</section>

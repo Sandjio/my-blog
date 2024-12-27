@@ -16,8 +16,8 @@ class PostListView(ListView):
 
         for post in posts:
             paragraphs = post.content.split("\n")
-            post.preview_content = "\n\n".join(paragraphs[:3])
-            post.has_more_content = len(paragraphs) > 3
+            post.preview_content = "\n\n".join(paragraphs[:5])
+            post.has_more_content = len(paragraphs) > 5
 
         return context
 

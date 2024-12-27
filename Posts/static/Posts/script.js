@@ -1,5 +1,5 @@
 const hamburgerClick = document.getElementById("hamburgerIcon");
-let recentPostContainer = document.getElementById("recentPostId");
+let recentPostContainer = document.getElementById("postContainerId");
 let recentPostContainerState = true;
 
 hamburgerClick.addEventListener("click", function (event) {

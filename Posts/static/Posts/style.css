@@ -86,10 +86,13 @@ a:hover {
 }
 .post-short-overview {
   text-align: justify;
-  border: 1px solid black;
 }
 .post-content {
+  justify-self: center;
   margin: 0px 68px;
+  border: 1px solid #ccc;
+  width: 100%;
+
 }
 .post-cover-image {
   width: 100%;
@@ -100,6 +103,19 @@ a:hover {
   font-size: 3.2rem;
   line-height: 1.1;
   letter-spacing: -0.05rem;
+}
+.pagination {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.categories-container {
+  color: var(--text-color);
+}
+.categories-headline {
+  /* justify-self: self-start; */
 }
 /* For large screens (desktop) */
 @media (min-width: 993px) {
@@ -136,6 +152,10 @@ a:hover {
   }
 
   .recent-post-container {
+    a:hover {
+      text-decoration: underline;
+      color: white;
+    }
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -180,16 +200,14 @@ a:hover {
     justify-content: space-around;
   }
   .recent-post-container {
-    display: none;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 32px 10px;
   }
   .post-container {
     margin: 10px 10px;
+    display: none;
+    flex-direction: column;
   }
-  /* .recent-post-headline {
-    position: absolute;
-    top: 352px;
-  } */
 }
