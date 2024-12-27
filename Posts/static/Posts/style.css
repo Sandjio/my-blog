@@ -104,8 +104,8 @@ a:hover {
 /* For large screens (desktop) */
 @media (min-width: 993px) {
   main {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 0fr 1fr;
     width: 80%;
     height: 100dvh;
     margin-top: 200px;
@@ -115,7 +115,6 @@ a:hover {
     flex-direction: column;
     align-items: center;
     min-width: 400px;
-    min-height: 100dvw;
     background-color: #27282b;
   }
 

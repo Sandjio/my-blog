@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for post in posts %}
-
     <div>
         <img class="post-cover-image" src="{{ post.image.url }}" alt="">
         <div class="post-content">
@@ -10,5 +8,4 @@
             <div class="post-short-overview">{{ post.content|linebreaks }}</>
         </div>
     </div>
-{% endfor %}
 {% endblock %}
