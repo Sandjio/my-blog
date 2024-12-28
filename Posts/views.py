@@ -1,5 +1,7 @@
+from django.shortcuts import get_object_or_404
+from django.db.models import Count
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import Post, Category
 
 
 # Create your views here.
@@ -10,9 +12,19 @@ class PostListView(ListView):
     ordering = ["-created_at"]
     paginate_by = 5
 
+    def get_queryset(self):
+        category_id = self.kwargs.get("category_id")
+        if category_id:
+            category = get_object_or_404(Category, id=category_id)
+            return Post.objects.filter(categories=category, is_published=True)
+        return Post.objects.filter(is_published=True)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         posts = context["posts"]
+        context["categories"] = Category.objects.all().annotate(
+            post_count=Count("posts")
+        )
 
         for post in posts:
             paragraphs = post.content.split("\n")

@@ -73,7 +73,7 @@
             <h3 class="categories-headline">CATEGORIES</h3>
             <ul class="categories-list">
               {% for category in categories %}
-              <li class="category">{{ category.name }} {{ category.post_count }}</li>
+              <li class="category"><a href="{% url 'post_list_by_category' category.id %}">{{ category.name }} {{ category.post_count }}</a></li>
               {% endfor %}
             </ul>
           </div>
