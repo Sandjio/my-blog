@@ -89,6 +89,9 @@ a:hover {
   text-align: justify;
 }
 .post-content {
+  a{
+    color:#333;
+  }
   justify-self: center;
   width: 90%;
   word-wrap: break-word
@@ -110,9 +113,7 @@ a:hover {
     color: var(--text-color);
   }
 }
-/* .categories-headline { */
-  /* justify-self: self-start; */
-/* } */
+
 /* For large screens (desktop) */
 @media (min-width: 993px) {
   main {
