@@ -6,6 +6,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{% block title %}Emmanuel Sandjio | Blog {% endblock %}</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'Posts/images/avatar.png' %}"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script
       src="https://kit.fontawesome.com/dd8b004c53.js"
@@ -34,13 +39,22 @@
             A blog about Programming and Cloud computing.
           </p>
           <span class="social-media-container">
-            <a class="social-media" href="https://github.com/Sandjio" target="_blank"
+            <a
+              class="social-media"
+              href="https://github.com/Sandjio"
+              target="_blank"
               ><i class="fa-brands fa-github fa-lg"></i
             ></a>
-            <a class="social-media" href="https://linkedin.com/in/emmanuel-sandjio" target="_blank"
+            <a
+              class="social-media"
+              href="https://linkedin.com/in/emmanuel-sandjio"
+              target="_blank"
               ><i class="fa-brands fa-linkedin-in fa-lg"></i
             ></a>
-            <a class="social-media" href="https://x.com/EmmanuelSandjio" target="_blank"
+            <a
+              class="social-media"
+              href="https://x.com/EmmanuelSandjio"
+              target="_blank"
               ><i class="fa-brands fa-x-twitter fa-lg"></i
             ></a>
           </span>
@@ -51,19 +65,13 @@
         <div id="postContainerId" class="post-container">
           <h3 class="recent-post-headline">Recent Posts</h3>
           {% for post in posts %}
-          <div  class="recent-post-container">
+          <div class="recent-post-container">
             <a href="{% url 'post_detail' post.slug %}">
-              <img
-                class="recent-post-img"
-                src="{{ post.image.url }}"
-                alt=""
-              />
+              <img class="recent-post-img" src="{{ post.image.url }}" alt="" />
             </a>
             <div>
               <a href="{% url 'post_detail' post.slug %}">
-                <h3 class="recent-post-description">
-                  {{ post.title }}
-                </h3>
+                <h3 class="recent-post-description">{{ post.title }}</h3>
               </a>
               <h4 class="recent-post-description">{{ post.created_at }}</h4>
             </div>
@@ -73,13 +81,19 @@
             <h3 class="categories-headline">CATEGORIES</h3>
             <ul class="categories-list">
               {% for category in categories %}
-              <li class="category"><a href="{% url 'post_list_by_category' category.id %}">{{ category.name }} {{ category.post_count }}</a></li>
+              <li class="category">
+                <a href="{% url 'post_list_by_category' category.id %}"
+                  >{{ category.name }} {{ category.post_count }}</a
+                >
+              </li>
               {% endfor %}
             </ul>
           </div>
         </div>
       </section>
-      <section class="post-list-container content">{% block content %} {% endblock %}</section>
+      <section class="post-list-container content">
+        {% block content %} {% endblock %}
+      </section>
     </main>
     <script src="{% static 'Posts/script.js' %}"></script>
   </body>
