@@ -27,7 +27,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("Debug", default=False, cast=bool)
 
-ALLOWED_HOSTS = ["*"]  # TODO change this prod
+ALLOWED_HOSTS = ["blog.emmasandjio.com", "www.blog.emmasandjio.com"]
 
 
 # Application definition
