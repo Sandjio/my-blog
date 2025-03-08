@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn daemon for Django app
+After=network.target
+
+[Service]
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ubuntu/my-blog
+ExecStart=/home/ubuntu/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 Blog.wsgi:application
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
